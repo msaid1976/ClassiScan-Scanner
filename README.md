@@ -203,10 +203,10 @@ graph TD
 ### Performance by Category (Table 1)
 ```
 Code Type               Total Images  Successful  Failed  Success Rate  Failure Rate
-Barcode                 324          259         65      79.9%         20.1%
-QR Code                 275          224         51      81.5%         18.5%
-Both Barcode-QRCode     150          130         20      86.8%         13.2%
-Overall                 750          614         136     81.9%         18.1%
+Barcode                     324          259        65      79.9%         20.1%
+QR Code                     275          224        51      81.5%         18.5%
+Both Barcode-QRCode         150          130        20      86.8%         13.2%
+Overall                     750          614        136     81.9%         18.1%
 ```
 
 ### Detection Performance (Table 2)
