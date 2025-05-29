@@ -200,16 +200,7 @@ graph TD
 
 ## 📊 Performance Results
 
-### Detection Performance (Table 1)
-```
-Code Type                 Precision  Recall     F1-Score   Success Rate  Avg Time (ms)
-Barcode                   82.1%      79.9%      88.9%      79.9%         859.02
-QR Code                   83.2%      81.5%      89.8%      81.5%         838.21
-Both Barcode-QRCode       88.1%      86.8%      92.9%      86.8%         615.28
-Overall                   83.5%      81.9%      90.0%      81.9%         742.6
-```
-
-### Performance by Category (Table 3)
+### Performance by Category (Table 1)
 ```
 Code Type               Total Images  Successful  Failed  Success Rate  Failure Rate
 Barcode                 324          259         65      79.9%         20.1%
@@ -218,13 +209,31 @@ Both Barcode-QRCode     150          130         20      86.8%         13.2%
 Overall                 750          614         136     81.9%         18.1%
 ```
 
-### Segmentation Accuracy (Table 4)
+### Detection Performance (Table 2)
+```
+Code Type                 Precision  Recall     F1-Score   Success Rate  Avg Time (ms)
+Barcode                   82.1%      79.9%      88.9%      79.9%         859.02
+QR Code                   83.2%      81.5%      89.8%      81.5%         838.21
+Both Barcode-QRCode       88.1%      86.8%      92.9%      86.8%         615.28
+Overall                   83.5%      81.9%      90.0%      81.9%         742.6
+```
+
+### Segmentation Accuracy (Table 3)
 ```
 Code Type               Mean IoU  Boundary F1  Over-seg Rate  Under-seg Rate
 Barcode                 0.850     0.903        2.1%           4.3%
 QR Code                 0.853     0.904        1.8%           3.7%
 Both Barcode-QRCode     0.846     0.899        3.2%           5.8%
 Overall                 0.850     0.902        2.4%           4.6%
+```
+
+### Recognition Success Rate (Table 4)
+```
+Code Type               Recognition Rate  False Positive Rate  Average Decoding Time (ms)
+Barcode                    83.2%                0.3%                   14.2 
+QR Code                    83.8%                0.6%                   21.3
+Both Barcode-QRCode        93.7%                0.6%                   26.8
+Overall                    86.8%                0.5%                   18.7
 ```
 
 ## 📁 Directory Structure
