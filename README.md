@@ -114,7 +114,7 @@ The system automatically creates and manages the following structure:
 
 ```
 Project Root/
-├── BarcodeQRDetector.py                    # Main implementation (v3.7)
+├── ClassiScan.py   .py                    # Main implementation (v3.7)
 ├── requirements.txt                        # Python dependencies
 ├── README.md                               # This documentation
 ├── 
