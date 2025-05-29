@@ -1,4 +1,4 @@
-# 🔍 ClassiScan: Classical BarQR Scanner
+ 🔍 ClassiScan: Classical BarQR Scanner
 
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.5.0+-green.svg)](https://opencv.org/)
@@ -45,7 +45,6 @@ python ClassiScan.py --comprehensive --fill
 - [Directory Structure](#-directory-structure)
 - [Technical Implementation](#-technical-implementation)
 - [Advanced Features](#-advanced-features)
-- [Contributing](#-contributing)
 - [License](#-license)
 
 ## ✨ Features
@@ -129,11 +128,17 @@ The system has been tested and validated using the **Barcode and QR Code Image D
 
 **🔗 [Download Dataset: Barcode and QR Code Image Dataset](https://www.kaggle.com/datasets/mo7amed/barcode-and-qr-code-image-dataset/data)**
 
-This comprehensive dataset contains:
-- **Barcode-only images**: Various barcode formats in different conditions
-- **QR Code-only images**: QR codes with varying complexity and environments
-- **Mixed-content images**: Images containing both barcodes and QR codes
-- **Challenging conditions**: Blur, glare, perspective distortion, and noise
+This dataset contains **750 diverse images** designed for classical computer vision research in detection, segmentation, and recognition tasks (no deep learning required).
+
+### 📂 Dataset Structure:
+- **BarCode/** – 325 standard 1D barcode images
+- **QRCode/** – 275 2D QR code images  
+- **BarCode-QRCode/** – 150 mixed-content images (both codes in same image)
+
+### 🎯 Dataset Diversity:
+- **Formats**: EAN-13, EAN-8, UPC-A, Code-128, Code-39, QR codes
+- **Resolutions**: 300×300 to 1024×1024 pixels
+- **Conditions**: Clean/centered, skewed/angled, cluttered backgrounds, varying lighting, multiple codes per image
 
 ## 🔧 Development Setup
 
@@ -186,6 +191,7 @@ python ClassiScan.py --performance_test --folders BarCode
 ```bash
 # Full evaluation with visualization on specific folders
 python ClassiScan.py --comprehensive --fill --folders BarCode QRCode --max_images 100
+```
 
 ## 🏗️ System Architecture
 
@@ -208,6 +214,7 @@ graph TD
     I --> J[Format Validation]
     J --> K[Final Results]
 ```
+
 
 ## 📊 Performance Results
 
