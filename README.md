@@ -38,6 +38,7 @@ python ClassiScan.py --comprehensive --fill
 
 - [Features](#-features)
 - [Installation](#-installation)
+- [Development Setup](#-development-setup)
 - [Usage](#-usage)
 - [System Architecture](#-system-architecture)
 - [Performance Results](#-performance-results)
@@ -74,24 +75,6 @@ python ClassiScan.py --comprehensive --fill
 - **Multi-Table Analysis**: Detection, segmentation, recognition performance metrics
 - **Excel Export**: Professional multi-sheet reports with timestamp integration
 - **Category-Specific Assessment**: Barcode, QR code, and mixed-content analysis
-
-### Development Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/classical-barqr-scanner.git
-cd classical-barqr-scanner
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-```
 
 ## 🛠️ Installation
 
@@ -138,6 +121,35 @@ conda install -c conda-forge zbar
 # https://github.com/NuMicroSystems/pyzbar#installation
 ```
 
+## 📊 Dataset
+
+The system has been tested and validated using the **Barcode and QR Code Image Dataset** available on Kaggle:
+
+[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-Dataset-20BEFF.svg)](https://www.kaggle.com/datasets/mo7amed/barcode-and-qr-code-image-dataset/data)
+
+**🔗 [Download Dataset: Barcode and QR Code Image Dataset](https://www.kaggle.com/datasets/mo7amed/barcode-and-qr-code-image-dataset/data)**
+
+This comprehensive dataset contains:
+- **Barcode-only images**: Various barcode formats in different conditions
+- **QR Code-only images**: QR codes with varying complexity and environments
+- **Mixed-content images**: Images containing both barcodes and QR codes
+- **Challenging conditions**: Blur, glare, perspective distortion, and noise
+
+## 🔧 Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/classical-barqr-scanner.git
+cd classical-barqr-scanner
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install development dependencies
+pip install -r requirements-dev.txt
+```
+
 ## 🎮 Usage
 
 ### Basic Operations
@@ -174,7 +186,6 @@ python ClassiScan.py --performance_test --folders BarCode
 ```bash
 # Full evaluation with visualization on specific folders
 python ClassiScan.py --comprehensive --fill --folders BarCode QRCode --max_images 100
-```
 
 ## 🏗️ System Architecture
 
