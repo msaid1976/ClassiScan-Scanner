@@ -75,6 +75,21 @@ python ClassiScan.py --comprehensive --fill
 - **Excel Export**: Professional multi-sheet reports with timestamp integration
 - **Category-Specific Assessment**: Barcode, QR code, and mixed-content analysis
 
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/classical-barqr-scanner.git
+cd classical-barqr-scanner
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install development dependencies
+pip install -r requirements-dev.txt
+```
+
 ## 🛠️ Installation
 
 ### Prerequisites
@@ -343,27 +358,7 @@ The system integrates four complementary detection approaches:
 - [ ] **Mobile Optimization**: ARM and mobile device-specific optimizations
 - [ ] **Cloud Integration**: Scalable cloud-based processing architecture
 
-## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/classical-barqr-scanner.git
-cd classical-barqr-scanner
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-```
 
 ### Reporting Issues
 
@@ -381,10 +376,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
-
-**⭐ If this project helped you, please give it a star! ⭐**
-
-Made with ❤️ using classical computer vision techniques
-
-</div>
+ 
