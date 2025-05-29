@@ -116,22 +116,22 @@ The system automatically creates and manages the following structure:
 Project Root/
 ├── BarcodeQRDetector.py                    # Main implementation (v3.7)
 ├── requirements.txt                        # Python dependencies
-├── README.md                              # This documentation
+├── README.md                               # This documentation
 ├── 
 ├── Dataset/                               # Input images
-│   ├── BarCode/                          # Barcode-only images
-│   ├── QRCode/                           # QR code-only images
-│   └── BarCode-QRCode/                   # Mixed-content images
+│   ├── BarCode/                            # Barcode-only images
+│   ├── QRCode/                             # QR code-only images
+│   └── BarCode-QRCode/                     # Mixed-content images
 ├── 
 ├── Successfully Decoded Images/           # Successful detections
-│   ├── BarCode/                          # Processed barcode results
-│   ├── QRCode/                           # Processed QR code results
-│   └── BarCode-QRCode/                   # Processed mixed-content results
+│   ├── BarCode/                            # Processed barcode results
+│   ├── QRCode/                             # Processed QR code results
+│   └── BarCode-QRCode/                     # Processed mixed-content results
 ├── 
 ├── Failed Decoded Images/                 # Failed detections
-│   ├── BarCode/                          # Failed barcode attempts
-│   ├── QRCode/                           # Failed QR code attempts
-│   └── BarCode-QRCode/                   # Failed mixed-content attempts
+│   ├── BarCode/                            # Failed barcode attempts
+│   ├── QRCode/                             # Failed QR code attempts
+│   └── BarCode-QRCode/                     # Failed mixed-content attempts
 └── 
 └── comprehensive_evaluation_*.xlsx        # Generated performance reports
 ```
@@ -142,42 +142,42 @@ Project Root/
 
 ```bash
 # Standard processing with border visualization
-python BarcodeQRDetector.py
+python ClassiScan.py
 
 # Enable fill mode for semi-transparent highlighting
-python BarcodeQRDetector.py --fill
+python ClassiScan.py --fill
 
 # Process specific code types only
-python BarcodeQRDetector.py --folders BarCode QRCode
+python ClassiScan.py --folders BarCode QRCode
 
 # Limit processing for testing
-python BarcodeQRDetector.py --max_images 50
+python ClassiScan.py --max_images 50
 ```
 
 ### **Advanced Features**
 
 ```bash
 # Comprehensive evaluation with all performance tables
-python BarcodeQRDetector.py --comprehensive
+python ClassiScan.py --comprehensive
 
 # Comprehensive evaluation with fill mode
-python BarcodeQRDetector.py --comprehensive --fill
+python ClassiScan.py --comprehensive --fill
 
 # Performance testing on specific folders
-python BarcodeQRDetector.py --performance_test --folders BarCode
+python ClassiScan.py --performance_test --folders BarCode
 
 # Single image testing with full evaluation
-python BarcodeQRDetector.py --test_image sample.jpg --comprehensive
+python ClassiScan.py --test_image sample.jpg --comprehensive
 ```
 
 ### **Combined Operations**
 
 ```bash
 # Full evaluation with visualization on specific folders
-python BarcodeQRDetector.py --comprehensive --fill --folders BarCode QRCode --max_images 100
+python ClassiScan.py --comprehensive --fill --folders BarCode QRCode --max_images 100
 
 # Performance testing with limited scope
-python BarcodeQRDetector.py --performance_test --folders BarCode-QRCode --max_images 25
+python ClassiScan.py --performance_test --folders BarCode-QRCode --max_images 25
 ```
 
 ## System Output Examples
@@ -186,17 +186,17 @@ python BarcodeQRDetector.py --performance_test --folders BarCode-QRCode --max_im
 ```
 ✓ Fill mode ENABLED - detected regions will be filled with semi-transparent color
 
-Processing BarCode folder (324 images):
+Processing BarCode folder (325 images):
 Processing BarCode: 100%|██████████| 324/324 [00:45<00:00, 7.2img/s] Success: 259/324 (79.9%)
-✓ Completed BarCode: 259/324 successful (79.9%)
+✓ Completed BarCode: 259/325 successful (79.9%)
 
 Processing QRCode folder (275 images):
 Processing QRCode: 100%|██████████| 275/275 [00:38<00:00, 7.3img/s] Success: 224/275 (81.5%)
 ✓ Completed QRCode: 224/275 successful (81.5%)
 
-Processing BarCode-QRCode folder (151 images):
+Processing BarCode-QRCode folder (150 images):
 Processing BarCode-QRCode: 100%|██████████| 151/151 [00:20<00:00, 7.5img/s] Success: 131/151 (86.8%)
-✓ Completed BarCode-QRCode: 131/151 successful (86.8%)
+✓ Completed BarCode-QRCode: 131/150 successful (86.8%)
 
 FINAL SUMMARY:
 Total images processed: 750
