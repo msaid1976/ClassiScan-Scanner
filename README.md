@@ -17,6 +17,51 @@
 | **Segmentation Accuracy** | Mean IoU 0.850 |
 | **Supported Formats** | EAN-13/8, UPC-A, Code-128/39, QR codes |
 
+## 🛠️ Installation
+
+### Prerequisites
+- Python 3.7 or higher
+- OpenCV 4.5.0 or higher
+- ZBar library (for PyZBar)
+
+### Step 1: Install Python Dependencies
+
+```bash
+pip install opencv-python>=4.5.0
+pip install numpy>=1.20.0
+pip install pandas>=1.3.0
+pip install pyzbar>=0.1.8
+pip install openpyxl>=3.0.0
+pip install tqdm>=4.64.0
+```
+
+Or use the requirements file:
+```bash
+pip install -r requirements.txt
+```
+
+### Step 2: Install ZBar Library
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get update
+sudo apt-get install libzbar0
+```
+
+**macOS:**
+```bash
+brew install zbar
+```
+
+**Windows:**
+```bash
+# Using conda (recommended)
+conda install -c conda-forge zbar
+
+# Or download prebuilt binaries from:
+# https://github.com/NuMicroSystems/pyzbar#installation
+```
+
 ## 🚀 Quick Start
 
 ```bash
@@ -75,50 +120,7 @@ python ClassiScan.py --comprehensive --fill
 - **Excel Export**: Professional multi-sheet reports with timestamp integration
 - **Category-Specific Assessment**: Barcode, QR code, and mixed-content analysis
 
-## 🛠️ Installation
 
-### Prerequisites
-- Python 3.7 or higher
-- OpenCV 4.5.0 or higher
-- ZBar library (for PyZBar)
-
-### Step 1: Install Python Dependencies
-
-```bash
-pip install opencv-python>=4.5.0
-pip install numpy>=1.20.0
-pip install pandas>=1.3.0
-pip install pyzbar>=0.1.8
-pip install openpyxl>=3.0.0
-pip install tqdm>=4.64.0
-```
-
-Or use the requirements file:
-```bash
-pip install -r requirements.txt
-```
-
-### Step 2: Install ZBar Library
-
-**Ubuntu/Debian:**
-```bash
-sudo apt-get update
-sudo apt-get install libzbar0
-```
-
-**macOS:**
-```bash
-brew install zbar
-```
-
-**Windows:**
-```bash
-# Using conda (recommended)
-conda install -c conda-forge zbar
-
-# Or download prebuilt binaries from:
-# https://github.com/NuMicroSystems/pyzbar#installation
-```
 
 ## 📊 Dataset
 
