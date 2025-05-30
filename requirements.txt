@@ -5,13 +5,3 @@ pyzbar>=0.1.8
 pathlib>=1.0.0
 openpyxl>=3.0.0
 tqdm>=4.64.0
-statistics
-collections
-datetime
-json
-re
-warnings
-sys
-os
-time
-argparse
