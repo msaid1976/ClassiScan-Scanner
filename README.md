@@ -89,10 +89,16 @@ cd classical-barqr-scanner
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Activate virtual environment 
+# For Windows
+venv\Scripts\activate
+
+# For Linux
+source venv/bin/activate
 
 # Install development dependencies
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 ```
 
 
