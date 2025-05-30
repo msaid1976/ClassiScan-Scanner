@@ -17,6 +17,85 @@
 | **Segmentation Accuracy** | Mean IoU 0.850 |
 | **Supported Formats** | EAN-13/8, UPC-A, Code-128/39, QR codes |
 
+
+
+
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/classical-barqr-scanner.git
+cd classical-barqr-scanner
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run basic detection
+python ClassiScan.py
+
+# Run with comprehensive evaluation
+python ClassiScan.py --comprehensive --fill
+```
+
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Development Setup](#-development-setup)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [System Architecture](#-system-architecture)
+- [Performance Results](#-performance-results)
+- [Directory Structure](#-directory-structure)
+- [Technical Implementation](#-technical-implementation)
+- [Advanced Features](#-advanced-features)
+- [License](#-license)
+
+## ✨ Features
+
+### 🎯 Multi-Pathway Detection Architecture
+- **Edge-Based Detection**: Optimized Canny (40/120 thresholds) with morphological enhancement
+- **Gradient-Based Detection**: Sobel operators with adaptive pattern recognition  
+- **Direct PyZBar Detection**: Fast path for high-quality images with silent error handling
+- **Specialized QR Detection**: Grid-based search with finder pattern recognition
+- **Multi-Scale Processing**: 0.7×, 1.0×, 1.3× scales for comprehensive size coverage
+
+### 🔧 Advanced Preprocessing Pipeline
+- **Adaptive Quality Assessment**: Blur detection (threshold 150) and glare analysis
+- **CLAHE Enhancement**: Clip limit 2.5 with 6×6 grid for local contrast adaptation
+- **Multi-Threshold Processing**: Block sizes [7, 11, 15, 19] for varying illumination
+- **Bilateral Filtering**: Edge-preserving noise reduction with optimized parameters
+- **Intelligent Path Selection**: Quality-based preprocessing complexity determination
+
+### 🎨 Intelligent Visualization
+- **Fill Mode**: Semi-transparent overlay (30% opacity) with border enhancement
+- **Multi-Code Management**: Distinct HSV-based colors for simultaneous detection
+- **Adaptive Text Display**: Font scaling based on code dimensions
+- **Professional Output**: Content-based file naming with structured directories
+
+### 📈 Comprehensive Evaluation Framework
+- **Real-Time Metrics**: Precision, recall, F1-score calculation during processing
+- **Multi-Table Analysis**: Detection, segmentation, recognition performance metrics
+- **Excel Export**: Professional multi-sheet reports with timestamp integration
+- **Category-Specific Assessment**: Barcode, QR code, and mixed-content analysis
+
+
+## 🔧 Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/classical-barqr-scanner.git
+cd classical-barqr-scanner
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install development dependencies
+pip install -r requirements-dev.txt
+```
+
+
 ## 🛠️ Installation
 
 ### Prerequisites
@@ -62,66 +141,6 @@ conda install -c conda-forge zbar
 # https://github.com/NuMicroSystems/pyzbar#installation
 ```
 
-## 🚀 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/classical-barqr-scanner.git
-cd classical-barqr-scanner
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run basic detection
-python ClassiScan.py
-
-# Run with comprehensive evaluation
-python ClassiScan.py --comprehensive --fill
-```
-
-## 📋 Table of Contents
-
-- [Features](#-features)
-- [Installation](#-installation)
-- [Development Setup](#-development-setup)
-- [Usage](#-usage)
-- [System Architecture](#-system-architecture)
-- [Performance Results](#-performance-results)
-- [Directory Structure](#-directory-structure)
-- [Technical Implementation](#-technical-implementation)
-- [Advanced Features](#-advanced-features)
-- [License](#-license)
-
-## ✨ Features
-
-### 🎯 Multi-Pathway Detection Architecture
-- **Edge-Based Detection**: Optimized Canny (40/120 thresholds) with morphological enhancement
-- **Gradient-Based Detection**: Sobel operators with adaptive pattern recognition  
-- **Direct PyZBar Detection**: Fast path for high-quality images with silent error handling
-- **Specialized QR Detection**: Grid-based search with finder pattern recognition
-- **Multi-Scale Processing**: 0.7×, 1.0×, 1.3× scales for comprehensive size coverage
-
-### 🔧 Advanced Preprocessing Pipeline
-- **Adaptive Quality Assessment**: Blur detection (threshold 150) and glare analysis
-- **CLAHE Enhancement**: Clip limit 2.5 with 6×6 grid for local contrast adaptation
-- **Multi-Threshold Processing**: Block sizes [7, 11, 15, 19] for varying illumination
-- **Bilateral Filtering**: Edge-preserving noise reduction with optimized parameters
-- **Intelligent Path Selection**: Quality-based preprocessing complexity determination
-
-### 🎨 Intelligent Visualization
-- **Fill Mode**: Semi-transparent overlay (30% opacity) with border enhancement
-- **Multi-Code Management**: Distinct HSV-based colors for simultaneous detection
-- **Adaptive Text Display**: Font scaling based on code dimensions
-- **Professional Output**: Content-based file naming with structured directories
-
-### 📈 Comprehensive Evaluation Framework
-- **Real-Time Metrics**: Precision, recall, F1-score calculation during processing
-- **Multi-Table Analysis**: Detection, segmentation, recognition performance metrics
-- **Excel Export**: Professional multi-sheet reports with timestamp integration
-- **Category-Specific Assessment**: Barcode, QR code, and mixed-content analysis
-
-
-
 ## 📊 Dataset
 
 The system has been tested and validated using the **Barcode and QR Code Image Dataset** available on Kaggle:
@@ -142,20 +161,7 @@ This dataset contains **750 diverse images** designed for classical computer vis
 - **Resolutions**: 300×300 to 1024×1024 pixels
 - **Conditions**: Clean/centered, skewed/angled, cluttered backgrounds, varying lighting, multiple codes per image
 
-## 🔧 Development Setup
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/classical-barqr-scanner.git
-cd classical-barqr-scanner
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install development dependencies
-pip install -r requirements-dev.txt
-```
 
 ## 🎮 Usage
 
