@@ -127,6 +127,16 @@ pip install -r requirements.txt
 
 ### Step 2: Install ZBar Library
 
+
+**Windows:**
+```bash
+# Using conda (recommended)
+conda install -c conda-forge zbar
+
+# Or download prebuilt binaries from:
+# https://github.com/NuMicroSystems/pyzbar#installation
+```
+
 **Ubuntu/Debian:**
 ```bash
 sudo apt-get update
@@ -138,14 +148,6 @@ sudo apt-get install libzbar0
 brew install zbar
 ```
 
-**Windows:**
-```bash
-# Using conda (recommended)
-conda install -c conda-forge zbar
-
-# Or download prebuilt binaries from:
-# https://github.com/NuMicroSystems/pyzbar#installation
-```
 
 ## 📊 Dataset
 
