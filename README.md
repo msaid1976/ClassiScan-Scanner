@@ -21,7 +21,7 @@
 
 
 
-## 🚀 Quick Start
+<!-- ## 🚀 Quick Start
 
 ```bash
 # Clone the repository
@@ -36,7 +36,7 @@ python ClassiScan.py
 
 # Run with comprehensive evaluation
 python ClassiScan.py --comprehensive --fill
-```
+``` -->
 
 ## 📋 Table of Contents
 
