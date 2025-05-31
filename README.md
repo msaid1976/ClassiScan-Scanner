@@ -185,23 +185,23 @@ Project Root/
 ├── 📄 requirements.txt                     # Python dependencies
 ├── 📄 README.md                            # Documentation
 ├── 📄 LICENSE                              # License file
-├── 
+├
 ├── 📁 Dataset/                             # Input images
-│   ├── 📁 BarCode/                         # Barcode-only images
-│   ├── 📁 QRCode/                          # QR code-only images
-│   └── 📁 BarCode-QRCode/                  # Mixed-content images
+│   ├── 📁 BarCode/                           # Barcode-only images
+│   ├── 📁 QRCode/                            # QR code-only images
+│   └── 📁 BarCode-QRCode/                    # Mixed-content images
 ├── 
 ├── 📁 Successfully Decoded Images/         # Successful detections
-│   ├── 📁 BarCode/                         # Processed barcode results
-│   ├── 📁 QRCode/                          # Processed QR code results
-│   └── 📁 BarCode-QRCode/                  # Processed mixed-content results
-├── 
+│   ├── 📁 BarCode/                           # Processed barcode results
+│   ├── 📁 QRCode/                            # Processed QR code results
+│   └── 📁 BarCode-QRCode/                    # Processed mixed-content results
+├
 ├── 📁 Failed Decoded Images/               # Failed detections
-│   ├── 📁 BarCode/                         # Failed barcode attempts
-│   ├── 📁 QRCode/                          # Failed QR code attempts
-│   └── 📁 BarCode-QRCode/                  # Failed mixed-content attempts
+│   ├── 📁 BarCode/                           # Failed barcode attempts
+│   ├── 📁 QRCode/                            # Failed QR code attempts
+│   └── 📁 BarCode-QRCode/                    # Failed mixed-content attempts
 └── 
-└── 📊 evaluation_results_*.xlsx            # Generated performance reports
+└── 📊 evaluation_results*.xlsx            # Generated performance reports
 ```
 
 ---
