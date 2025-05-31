@@ -1,17 +1,7 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 """
-Enhanced Barcode and QR Code Detection, Segmentation, and Recognition System
-Optimized version based on original BarcodeQRDetector_V3.4.py
-- Optimized hyperparameters for better detection
-- Improved boundary fitting without changing core logic
-- Fixed fill mode implementation
-- Enhanced preprocessing with proven techniques
-- Maintains original class names and structure
-- Added comprehensive real metrics calculation
-
-Version: 3.7 Enhanced with Real Metrics
+Author: [Mohamed Mohamed Said Aly]
+TP Number: TP079177
+License: MIT License
 Date: May 26, 2025
 """
 
@@ -72,6 +62,9 @@ except ImportError:
 
 # Global variable
 FILL_MODE = False
+
+# Global list to collect all detected codes for Excel export
+DETECTED_CODES_LOG = []
 
 class PerformanceEvaluator:
     """Comprehensive evaluation framework for barcode/QR code detection system"""
@@ -838,6 +831,12 @@ class PerformanceEvaluator:
                 # Table 5
                 df5 = pd.DataFrame(results['table5']).T
                 df5.to_excel(writer, sheet_name='Recognition Success')
+                
+                # NEW: Add detected codes sheet
+                global DETECTED_CODES_LOG
+                if DETECTED_CODES_LOG:
+                    df_codes = pd.DataFrame(DETECTED_CODES_LOG, columns=['Folder Name', 'Image Name', 'Detected Code'])
+                    df_codes.to_excel(writer, sheet_name='Detected Codes', index=False)
             
             print(f"\nComprehensive evaluation results exported to {filename}")
             return filename
@@ -845,7 +844,8 @@ class PerformanceEvaluator:
             print(f"Error exporting to Excel: {e}")
             return None
 
-
+    
+ 
 class CodeDetector:
     def __init__(self):
         # OPTIMIZED: Better hyperparameters based on testing
@@ -885,6 +885,9 @@ class CodeDetector:
         self.ean13_ratio_range = (1.8, 3.2)  # Tighter range from (1.5, 3.5)
         self.min_ean13_width = 60  # Reduced from 80 to detect smaller barcodes
         self.segment_ratio_threshold = 0.75  # Reduced from 0.85 for more tolerance        
+
+        # FIXED: Add CodeRecognizer instance
+        self.recognizer = CodeRecognizer()
 
     def preprocess_image(self, image):
         """Enhanced preprocessing with optimized parameters"""
@@ -1748,7 +1751,6 @@ class CodeDetector:
         
         return filtered if filtered else regions
 
-
 class CodeRecognizer:
     def __init__(self):
         # OPTIMIZED: Better EAN-13 parameters
@@ -1923,6 +1925,11 @@ class CodeSystemProcessor:
         self.text_color = (0, 0, 255)
         self.debug_mode = False
 
+    def add_detected_code_to_log(self, folder_name, image_name, detected_code):
+        """Add a detected code entry to the global log"""
+        global DETECTED_CODES_LOG
+        DETECTED_CODES_LOG.append([folder_name, image_name, detected_code])
+
     def process_image(self, image_path):
         """Process a single image with FIXED fill mode and better boundaries"""
         global FILL_MODE
@@ -1941,6 +1948,10 @@ class CodeSystemProcessor:
             
             recognized_codes = []
 
+            # NEW: Get folder name for logging
+            folder_name = Path(image_path).parent.name
+            image_name = Path(image_path).name
+
             for i, region in enumerate(detected_regions):
                 try:
                     warped = region['warped']
@@ -1954,6 +1965,10 @@ class CodeSystemProcessor:
                         
                     if decoded:
                         recognized_codes.append(decoded)
+                        
+                        # NEW: Add detected code to log
+                        self.add_detected_code_to_log(folder_name, image_name, decoded['data'])
+                        
                         pts = np.array(box, dtype=np.int32).reshape((-1, 1, 2))
                         
                         # Generate a distinct color for each code
@@ -2018,6 +2033,16 @@ class CodeSystemProcessor:
             processing_time = time.time() - start_time
             success = len(recognized_codes) > 0
 
+            # NEW: Print detected codes in terminal
+            if success:
+                if len(recognized_codes) > 1:
+                    for i, code in enumerate(recognized_codes, 1):
+                        print(f"Detected Code {i}: {code['data']}")
+                else:
+                    print(f"Detected Code: {recognized_codes[0]['data']}")
+            else:
+                print(f"[NO CODE DETECTED] - {image_name}")
+
             result = {
                 'image_path': str(image_path),
                 'detected_regions': len(detected_regions),
@@ -2054,6 +2079,10 @@ class CodeSystemProcessor:
             
             recognized_codes = []
             total_decode_time = 0
+
+            # NEW: Get folder name for logging
+            folder_name = Path(image_path).parent.name
+            image_name = Path(image_path).name
             
             for i, region in enumerate(detected_regions):
                 try:
@@ -2073,6 +2102,9 @@ class CodeSystemProcessor:
                     
                     if decoded:
                         recognized_codes.append(decoded)
+                        
+                        # NEW: Add detected code to log
+                        self.add_detected_code_to_log(folder_name, image_name, decoded['data'])
                         
                         # Visualization code
                         pts = np.array(box, dtype=np.int32).reshape((-1, 1, 2))
@@ -2127,6 +2159,16 @@ class CodeSystemProcessor:
             processing_time = time.time() - start_time
             success = len(recognized_codes) > 0
 
+            # NEW: Print detected codes in terminal
+            if success:
+                if len(recognized_codes) > 1:
+                    for i, code in enumerate(recognized_codes, 1):
+                        print(f"Detected Code {i}: {code['data']}")
+                else:
+                    print(f"Detected Code: {recognized_codes[0]['data']}")
+            else:
+                print(f"[NO CODE DETECTED] - {image_name}")
+
             result = {
                 'image_path': str(image_path),
                 'detected_regions': len(detected_regions),
@@ -2160,6 +2202,10 @@ class CodeSystemProcessor:
             detected_regions = self.detector.detect(image)
             recognized_codes = []
 
+            # NEW: Get folder name for logging
+            folder_name = Path(image_path).parent.name
+            image_name = Path(image_path).name
+
             for i, region in enumerate(detected_regions):
                 try:
                     warped = region['warped']
@@ -2172,6 +2218,10 @@ class CodeSystemProcessor:
                         
                     if decoded:
                         recognized_codes.append(decoded)
+                        
+                        # NEW: Add detected code to log
+                        self.add_detected_code_to_log(folder_name, image_name, decoded['data'])
+                        
                         pts = np.array(box, dtype=np.int32).reshape((-1, 1, 2))
                         
                         color_hue = (i * 30) % 180
@@ -2224,6 +2274,16 @@ class CodeSystemProcessor:
             processing_time = time.time() - start_time
             success = len(recognized_codes) > 0
 
+            # Print detected codes in terminal (silent mode can still log)
+            if success:
+                if len(recognized_codes) > 1:
+                    for i, code in enumerate(recognized_codes, 1):
+                        print(f"Detected Code {i}: {code['data']}")
+                else:
+                    print(f"Detected Code: {recognized_codes[0]['data']}")
+            else:
+                print(f"[NO CODE DETECTED] - {image_name}")
+
             result = {
                 'image_path': str(image_path),
                 'detected_regions': len(detected_regions),
@@ -2235,7 +2295,7 @@ class CodeSystemProcessor:
 
             return result
         except:
-            return None        
+            return None
 
     def process_directory(self, directory_path, output_dir, failure_dir, max_images=None):
         """Process all images in a directory"""
@@ -2394,8 +2454,36 @@ class CodeSystemProcessor:
             'success_rate': success_rate,
             'avg_processing_time': avg_processing_time,
             'avg_detections': avg_detections
-        }         
+        }     
     
+
+def export_detected_codes_to_excel():
+    """Export all detected codes to Excel file with 3 columns: Folder Name, Image Name, Detected Code"""
+    global DETECTED_CODES_LOG
+    
+    if not DETECTED_CODES_LOG:
+        print("No detected codes to export.")
+        return None
+    
+    try:
+        # Create DataFrame
+        df = pd.DataFrame(DETECTED_CODES_LOG, columns=['Folder Name', 'Image Name', 'Detected Code'])
+        
+        # Generate filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"detected_codes_log_{timestamp}.xlsx"
+        
+        # Export to Excel
+        df.to_excel(filename, index=False, engine='openpyxl')
+        
+        print(f"\n✓ Detected codes exported to: {filename}")
+        print(f"✓ Total entries: {len(DETECTED_CODES_LOG)}")
+        
+        return filename
+        
+    except Exception as e:
+        print(f"Error exporting detected codes to Excel: {e}")
+        return None
 
 def create_directory_structure():
     """Create the necessary directory structure for input/output"""
@@ -2450,13 +2538,26 @@ def run_evaluation(dataset_dir, final_results_dir, failure_dir, max_images=None,
         'Average processing time (ms)'
     ]]
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now().strftime("%Y%m%d")
     excel_path = f"evaluation_results_{timestamp}.xlsx"
-    df_export.to_excel(excel_path, index=False)
-    print(f"\nEvaluation results exported to {excel_path}")
-    print("\nEvaluation Results:")
-    print(df_export.to_string(index=False))
-    return df_export
+
+    # Export main results and detected codes to same file
+    try:
+        with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
+            # Main evaluation results
+            df_export.to_excel(writer, sheet_name='Evaluation Results', index=False)
+            
+            # NEW: Add detected codes sheet
+            global DETECTED_CODES_LOG
+            if DETECTED_CODES_LOG:
+                df_codes = pd.DataFrame(DETECTED_CODES_LOG, columns=['Folder Name', 'Image Name', 'Detected Code'])
+                df_codes.to_excel(writer, sheet_name='Detected Codes', index=False)
+        
+        print(f"\nEvaluation results exported to {excel_path}")
+        if DETECTED_CODES_LOG:
+            print(f"✓ Detected codes included as additional sheet")
+    except Exception as e:
+        print(f"Error exporting to Excel: {e}")
 
 
 def run_comprehensive_evaluation(dataset_dir, final_results_dir, failure_dir, max_images=None, selected_folders=None):
@@ -2551,15 +2652,14 @@ def run_comprehensive_evaluation(dataset_dir, final_results_dir, failure_dir, ma
         print(f"✓ Completed {subdir}: {folder_successful}/{len(image_paths)} successful ({(folder_successful/len(image_paths)*100):.1f}%)")
 
     # Calculate and display consolidated metrics ONCE
-    # print(f"\n{'='*60}")
-    # print("GENERATING COMPREHENSIVE EVALUATION RESULTS...")
-    # print(f"{'='*60}")
-    
     evaluation_results = processor.evaluator.calculate_metrics()
     processor.evaluator.print_performance_tables(evaluation_results)
     
     # Export to Excel
     excel_file = processor.evaluator.export_results_to_excel(evaluation_results)
+    
+    # # NEW: Export detected codes to Excel
+    # excel_codes_file = export_detected_codes_to_excel()
     
     # Print final summary
     success_rate = (total_successful / total_processed * 100) if total_processed > 0 else 0
@@ -2569,13 +2669,16 @@ def run_comprehensive_evaluation(dataset_dir, final_results_dir, failure_dir, ma
     print(f"Overall success rate: {success_rate:.1f}%")
     if excel_file:
         print(f"Results exported to: {excel_file}")
+    if excel_codes_file:
+        print(f"Detected codes log exported to: {excel_codes_file}")
 
     return {
         'total_processed': total_processed,
         'total_successful': total_successful,
         'success_rate': success_rate,
         'comprehensive_results': evaluation_results,
-        'excel_export': excel_file
+        'excel_export': excel_file,
+        'detected_codes_excel': excel_codes_file  # NEW
     }
 
 def determine_image_category(self, image_path):
