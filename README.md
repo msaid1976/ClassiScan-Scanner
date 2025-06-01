@@ -275,15 +275,32 @@ python ClassiScan.py --folders BarCode --max_images 5
 | `--max_images [number]` | Limit number of images processed per folder |
 | `--help` | Show all available options |
 
-## 📊 Output Files
+## 📊 Output Files & Results
 
-After processing, you'll find:
-- **📁 Successfully Decoded Images/**: Processed images with highlighted codes
-- **📁 Failed Decoded Images/**: Images where detection failed
-- **📊 evaluation_results_YYYYMMDD.xlsx**: 
-  - Sheet 1: Performance metrics (success rates, timing)
-  - Sheet 2: All detected codes (folder, image, code data)
-- **📈 Comprehensive reports** (when using `--comprehensive`)
+After processing, the system automatically creates organized output directories:
+
+### 🎯 Successfully Decoded Images/
+**Processed images with highlighted detected codes**
+- **📁 BarCode/**: Successfully processed barcode images with detection overlays
+- **📁 QRCode/**: Successfully processed QR code images with detection overlays  
+- **📁 BarCode-QRCode/**: Successfully processed mixed-content images with multiple detections
+- **Features**: Color-coded detection boxes, numbered codes, decoded data display
+- **File naming**: Preserves original filenames for easy cross-reference
+
+### ❌ Failed Decoded Images/
+**Images where detection failed for analysis and debugging**
+- **📁 BarCode/**: Barcode images that couldn't be detected/recognized
+- **📁 QRCode/**: QR code images that couldn't be detected/recognized
+- **📁 BarCode-QRCode/**: Mixed-content images with failed detections
+- **Purpose**: Quality analysis, algorithm improvement, edge case identification
+- **File naming**: Original filenames preserved for failure analysis
+
+### 📊 Excel Reports
+- **📈 evaluation_results_YYYYMMDD.xlsx**: 
+  - Sheet 1: Performance metrics (success rates, precision, recall, timing)
+  - Sheet 2: All detected codes with location coordinates and metadata
+  - Sheet 3: Comprehensive analysis (when using `--comprehensive`)
+- **📋 detected_codes_log_YYYYMMDD.xlsx**: Detailed log of all successful detections
 
 ## 💡 Pro Tips
 - Start with `--max_images 10` for quick testing
@@ -333,6 +350,31 @@ After processing, you'll find:
 | **Overall** | **86.8%** | **0.5%** | **18.7** |
 
 ---
+
+## 🔍 System Output Analysis
+
+The ClassiScan system provides comprehensive output organization for both successful and failed detection attempts:
+
+### ✅ Success Analysis
+**Successfully Decoded Images/** contains all images where codes were successfully detected and recognized:
+- **Visual confirmation**: Each image shows the original with colored detection boxes
+- **Code identification**: Numbered overlays (Code 1, Code 2, etc.) for multiple detections
+- **Data display**: Decoded content shown directly on the image
+- **Quality assessment**: Successful cases help validate system performance
+
+### ❌ Failure Analysis  
+**Failed Decoded Images/** contains images where detection/recognition failed:
+- **Debugging resource**: Identify challenging scenarios and edge cases
+- **Algorithm improvement**: Analyze failure patterns for system enhancement
+- **Quality control**: Understand system limitations and operational boundaries
+- **Research value**: Failed cases provide insights for classical CV improvements
+
+### 📈 Performance Tracking
+Both success and failure directories enable:
+- **Success rate calculation** per category (Barcode, QR Code, Mixed)
+- **Failure pattern analysis** (lighting, angle, resolution issues)
+- **System validation** against diverse real-world conditions
+- **Continuous improvement** through systematic failure analysis
 
 
 ## ⚡ Performance Characteristics
