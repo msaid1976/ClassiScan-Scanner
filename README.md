@@ -14,21 +14,19 @@ A sophisticated classical computer vision system for detecting, segmenting, and 
 
 ## 📋 Table of Contents
 
-* [System Overview & Features](#features)
-* [🚀 One-Click Installation & Setup (Recommended)](#one-click-installation--setup-recommended)
-* [Manual Installation](#manual-installation)
-* [Dataset](#dataset)
-* [Usage & Commands](#usage--commands)
-* [🏗️ System Architecture](#️-system-architecture)
-* [📊 Performance Results](#-performance-results)
+* [✨ System Overview & Features](#-system-overview--features)
+* [🚀 One-Click Installation & Setup (Recommended)](#-one-click-installation--setup-recommended)
+* [🔧 Manual Installation](#-manual-installation)
+* [📊 Dataset](#-dataset)
 * [📁 Directory Structure](#-directory-structure)
-* [🔬 Technical Implementation](#-technical-implementation)
-* [🚀 Advanced Features](#-advanced-features)
+* [📋 Usage & Commands](#-usage--commands)
+* [📊 Output Files & Results](#-output-files--results)
+* [📊 Performance Results](#-performance-results)
+* [🔍 System Output Analysis](#-system-output-analysis)
 * [⚡ Performance Characteristics](#-performance-characteristics)
 * [🎯 Use Cases](#-use-cases)
-* [🚧 Current Limitations](#-current-limitations)
-* [🔮 Future Enhancements](#-future-enhancements)
-* [License](#license)
+* [📞 Reporting Issues](#-reporting-issues)
+* [📜 License](#-license)
 
 ## ✨ System Overview & Features
 
