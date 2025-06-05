@@ -199,7 +199,7 @@ Project Root/
 │   ├── 📁 QRCode/                            # Failed QR code attempts
 │   └── 📁 BarCode-QRCode/                    # Failed mixed-content attempts
 └── 
-└── 📊 evaluation_results*.xlsx            # Generated performance reports
+└── 📊 evaluation_results.xlsx            # Generated performance reports
 ```
 
 ---
