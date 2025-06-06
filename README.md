@@ -6,8 +6,8 @@ A sophisticated classical computer vision system for detecting, segmenting, and 
 
 | Metric | Performance |
 |--------|-------------|
-| **Overall Success Rate** | 81.9% (86.8% for mixed-content) |
-| **Processing Speed** | 14.2-26.8ms per code |
+| **Overall Success Rate** | 85.3% (86.8% for mixed-content) |
+| **Processing Speed** | 371.6ms to 698.5ms  per code |
 | **False Positive Rate** | <0.6% across all categories |
 | **Segmentation Accuracy** | Mean IoU 0.850 |
 | **Supported Formats** | EAN-13/8, UPC-A, Code-128/39, QR codes |
@@ -315,37 +315,37 @@ After processing, the system automatically creates organized output directories:
 
 | Code Type | Total Images | Successful | Failed | Success Rate | Failure Rate |
 |-----------|--------------|------------|--------|--------------|--------------|
-| **Barcode** | 324 | 259 | 65 | **79.9%** | 20.1% |
-| **QR Code** | 275 | 224 | 51 | **81.5%** | 18.5% |
+| **Barcode** | 325 | 275 | 50 | **84.6%** | 14.5% |
+| **QR Code** | 275 | 235 | 40 | **85.5%** | 15.4% |
 | **Both Barcode-QRCode** | 150 | 130 | 20 | **86.8%** | 13.2% |
-| **Overall** | **750** | **614** | **136** | **81.9%** | **18.1%** |
+| **Overall** | **750** | **640** | **110** | **85.3%** | **14.7%** |
 
 ### Detection Performance (Table 2)
 
-| Code Type | Precision | Recall | F1-Score | Success Rate | Avg Time (ms) |
-|-----------|-----------|--------|----------|--------------|---------------|
-| **Barcode** | 82.1% | 79.9% | 88.9% | 79.9% | 859.02 |
-| **QR Code** | 83.2% | 81.5% | 89.8% | 81.5% | 838.21 |
-| **Both Barcode-QRCode** | 88.1% | 86.8% | 92.9% | 86.8% | 615.28 |
-| **Overall** | **83.5%** | **81.9%** | **90.0%** | **81.9%** | **742.6** |
+| Code Type | Recall | F1-Score | Success Rate | Avg Time (ms) |
+|-----------|--------|----------|--------------|---------------|
+| **Barcode** | 84.6% | 91.6% | 84.6% | 13754.5 |
+| **QR Code** | 85.5% | 92.2% | 85.5% | 1599.7 |
+| **Both Barcode-QRCode** | 86.8% | 92.9% | 86.8% | 1201.3|
+| **Overall** | **85.3%** | **92.1%** | **85.3%** | **6770.4** |
 
 ### Segmentation Accuracy (Table 3)
 
-| Code Type | Mean IoU | Boundary F1 | Over-seg Rate | Under-seg Rate |
-|-----------|----------|-------------|---------------|----------------|
-| **Barcode** | 0.850 | 0.903 | 2.1% | 4.3% |
-| **QR Code** | 0.853 | 0.904 | 1.8% | 3.7% |
-| **Both Barcode-QRCode** | 0.846 | 0.899 | 3.2% | 5.8% |
-| **Overall** | **0.850** | **0.902** | **2.4%** | **4.6%** |
+| Code Type | Mean IoU | Boundary F1 | 
+|-----------|----------|-------------|
+| **Barcode** | 0.799 | 0.851 |
+| **QR Code** | 0.853 | 0.904 |
+| **Both Barcode-QRCode** | 0.799 | 0.851 |
+| **Overall** | **0.799** | **0.850** |
 
 ### Recognition Success Rate (Table 4)
 
 | Code Type | Recognition Rate | False Positive Rate | Average Decoding Time (ms) |
 |-----------|------------------|---------------------|----------------------------|
-| **Barcode** | 83.2% | 0.3% | 14.2 |
-| **QR Code** | 83.8% | 0.6% | 21.3 |
-| **Both Barcode-QRCode** | 93.7% | 0.6% | 26.8 |
-| **Overall** | **86.8%** | **0.5%** | **18.7** |
+| **Barcode** | 88.7% | 0.4% | 698.5 |
+| **QR Code** | 87.3% | 0.5% | 371.6 |
+| **Both Barcode-QRCode** | 93.7% | 0.6% | 241.5 |
+| **Overall** | **89.9%** | **0.3%** | **486.6** |
 
 ---
 
