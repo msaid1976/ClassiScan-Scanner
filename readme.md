@@ -66,10 +66,10 @@
 
 <details>
 <summary><strong>🔍 Click to expand detection methods</strong></summary>
-
+ 
+* **⚡ Direct PyZBar Detection**: Fast path for high-quality images with silent error handling
 * **🔲 Edge-Based Detection**: Optimized Canny (40/120 thresholds) with morphological enhancement
 * **📈 Gradient-Based Detection**: Sobel operators with adaptive pattern recognition  
-* **⚡ Direct PyZBar Detection**: Fast path for high-quality images with silent error handling
 * **🎯 Specialized QR Detection**: Grid-based search with finder pattern recognition
 * **📏 Multi-Scale Processing**: 0.7×, 1.0×, 1.3× scales for comprehensive size coverage
 
