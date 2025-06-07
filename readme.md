@@ -371,7 +371,7 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 | **Barcode** | 0.799 | 0.851 | 94.2% |
 | **QR Code** | 0.853 | 0.904 | 96.1% |
 | **Mixed Content** | 0.799 | 0.851 | 94.2% |
-| **🎯 Overall** | **0.850** | **0.850** | **94.8%** |
+| **🎯 Overall** | **0.799** | **0.850** | **94.8%** |
 
 </div>
 
