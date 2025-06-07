@@ -1,6 +1,16 @@
 # ClassiScan: Classical BarQR Scanner
 
-A sophisticated classical computer vision system for detecting, segmenting, and recognizing barcodes and QR codes in challenging real-world conditions using **exclusively traditional image processing techniques** - no deep learning, no YOLO, no pretrained models.
+ClassiScan is a comprehensive multi-pathway classical computer vision system for barcode and QR code detection, segmentation, and recognition
+
+- ✅ uses only classical computer vision techniques  no machine learning, no deep learning, no neural networks, no YOLO, no pretrained models. This means it works immediately without any training data, and every step is completely transparent and explainable."
+- ✅ Very accurate. We achieved 85.3% overall success rate, with mixed-content images reaching 86.8% detection and 93.7% recognition performance on our comprehensive 750-image dataset."
+- ✅ Supports comprehensive barcode formats. The system can read EAN-13 barcodes with checksum validation, EAN-8 codes, UPC-A codes common in North America, Code-128 and Code-39 used in shipping and inventory, and QR codes with specialized finder pattern recognition."
+- ✅ Handles complex scenarios. Unlike simple scanners, our system can detect and process multiple codes simultaneously - whether they're all barcodes, all QR codes, or mixed combinations in a single image."
+
+Overall Success Rate: 85.3% across all 750 test images" "Mixed-Content Performance: 86.8% detection and 93.7% recognition for images with both barcodes and QR codes" "Processing Speed: 371.6ms to 698.5ms per code, with 486.6ms average" "Segmentation Accuracy: 0.799 mean IoU and 0.850 boundary F1-score" "False Positive Rate: Only 0.3% to 0.6% across all categories" "Formats Supported: EAN-13, EAN-8, UPC-A, Code-128, Code-39, and QR codes with full validation"
+
+These results come from testing on our curated dataset of 750 diverse images published on Kaggle, including 325 barcode images, 275 QR code images, and 150 mixed-content images with controlled variations in lighting, angles, and quality.
+
 
 ## 📊 Key Performance Metrics
 
