@@ -136,7 +136,7 @@ brew install zbar
 
 The system has been tested and validated using the **Barcode and QR Code Image Dataset** available on Kaggle:
 
-**🔗 Download Dataset: [Barcode and QR Code Image Dataset]([(https://www.kaggle.com/datasets/mo7amed/barcode-and-qr-code-image-dataset)])**
+**🔗 Download Dataset: [Barcode and QR Code Image Dataset](https://www.kaggle.com/datasets/mo7amed/barcode-and-qr-code-image-dataset))**
 
 This dataset contains **750 diverse images** designed for classical computer vision research in detection, segmentation, and recognition tasks (no deep learning required).
 
