@@ -49,8 +49,8 @@
 * [📊 Dataset Information](#-dataset-information)
 * [📁 Directory Structure](#-directory-structure)
 * [📋 Usage & Commands](#-usage--commands)
-* [📊 Performance Results](#-performance-results)
 * [🎨 System Visual Output Results](#-system-visual-output-results)
+* [📊 Performance Results](#-performance-results)
 * [🔍 System Output Analysis](#-system-output-analysis)
 * [⚡ Performance Characteristics](#-performance-characteristics)
 * [🎯 Use Cases & Applications](#-use-cases--applications)
@@ -334,48 +334,6 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 
 ---
 
-## 📊 Performance Results
-
-### 📈 Overall Performance Summary (750 Images)
-
-<div align="center">
-
-| Code Type | Total | Success | Failed | Success Rate | Avg Time (ms) |
-|-----------|-------|---------|--------|--------------|---------------|
-| **Barcode** | 325 | 275 | 50 | **84.6%** | 13,754.5 |
-| **QR Code** | 275 | 235 | 40 | **85.5%** | 1,599.7 |
-| **Mixed Content** | 150 | 130 | 20 | **86.8%** | 1,201.3 |
-| **🎯 Overall** | **750** | **640** | **110** | **85.3%** | **6,770.4** |
-
-</div>
-
-### 🎯 Detection Performance Metrics
-
-<div align="center">
-
-| Code Type | Recall | Precision | F1-Score | Recognition Rate | False Positive |
-|-----------|--------|-----------|----------|------------------|----------------|
-| **Barcode** | 84.6% | 98.9% | 91.6% | 88.7% | 0.4% |
-| **QR Code** | 85.5% | 99.2% | 92.2% | 87.3% | 0.5% |
-| **Mixed Content** | 86.8% | 99.1% | 92.9% | 93.7% | 0.6% |
-| **🎯 Overall** | **85.3%** | **99.1%** | **92.1%** | **89.9%** | **0.3%** |
-
-</div>
-
-### 🎚️ Segmentation Accuracy
-
-<div align="center">
-
-| Code Type | Mean IoU | Boundary F1 | Pixel Accuracy |
-|-----------|----------|-------------|----------------|
-| **Barcode** | 0.799 | 0.851 | 94.2% |
-| **QR Code** | 0.853 | 0.904 | 96.1% |
-| **Mixed Content** | 0.799 | 0.851 | 94.2% |
-| **🎯 Overall** | **0.850** | **0.850** | **94.8%** |
-
-</div>
-
----
 
 ## 🎨 System Visual Output Results
 
@@ -478,6 +436,48 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 
 </div>
 
+## 📊 Performance Results
+
+### 📈 Overall Performance Summary (750 Images)
+
+<div align="center">
+
+| Code Type | Total | Success | Failed | Success Rate | Avg Time (ms) |
+|-----------|-------|---------|--------|--------------|---------------|
+| **Barcode** | 325 | 275 | 50 | **84.6%** | 13,754.5 |
+| **QR Code** | 275 | 235 | 40 | **85.5%** | 1,599.7 |
+| **Mixed Content** | 150 | 130 | 20 | **86.8%** | 1,201.3 |
+| **🎯 Overall** | **750** | **640** | **110** | **85.3%** | **6,770.4** |
+
+</div>
+
+### 🎯 Detection Performance Metrics
+
+<div align="center">
+
+| Code Type | Recall | Precision | F1-Score | Recognition Rate | False Positive |
+|-----------|--------|-----------|----------|------------------|----------------|
+| **Barcode** | 84.6% | 98.9% | 91.6% | 88.7% | 0.4% |
+| **QR Code** | 85.5% | 99.2% | 92.2% | 87.3% | 0.5% |
+| **Mixed Content** | 86.8% | 99.1% | 92.9% | 93.7% | 0.6% |
+| **🎯 Overall** | **85.3%** | **99.1%** | **92.1%** | **89.9%** | **0.3%** |
+
+</div>
+
+### 🎚️ Segmentation Accuracy
+
+<div align="center">
+
+| Code Type | Mean IoU | Boundary F1 | Pixel Accuracy |
+|-----------|----------|-------------|----------------|
+| **Barcode** | 0.799 | 0.851 | 94.2% |
+| **QR Code** | 0.853 | 0.904 | 96.1% |
+| **Mixed Content** | 0.799 | 0.851 | 94.2% |
+| **🎯 Overall** | **0.850** | **0.850** | **94.8%** |
+
+</div>
+
+---
 ### 🎯 Visual Features Summary
 
 <div align="center">
