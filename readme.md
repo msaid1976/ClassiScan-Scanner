@@ -353,12 +353,12 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 
 <div align="center">
 
-| Code Type | Recall | Precision | F1-Score | Recognition Rate | False Positive |
-|-----------|--------|-----------|----------|------------------|----------------|
-| **Barcode** | 84.6% | 98.9% | 91.6% | 88.7% | 0.4% |
-| **QR Code** | 85.5% | 99.2% | 92.2% | 87.3% | 0.5% |
-| **Mixed Content** | 86.8% | 99.1% | 92.9% | 93.7% | 0.6% |
-| **🎯 Overall** | **85.3%** | **99.1%** | **92.1%** | **89.9%** | **0.3%** |
+| Code Type | Recall | F1-Score |  Success Rate | Average Processing Time (ms) |
+|-----------|--------|-----------|----------|------------------|
+| **Barcode** | 84.6% | 91.6% |  84.6%  | 13754.5 |
+| **QR Code** | 85.5% | 92.2% | 85.5%  | 1599.7 |
+| **Mixed Content** | 86.8%| 92.9% | 86.8% | 1201.3 |
+| **🎯 Overall** | **85.3%** | **92.1%** | **85.3%** | **6770.4** |
 
 </div>
 
@@ -366,13 +366,12 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 
 <div align="center">
 
-| Code Type | Mean IoU | Boundary F1 | Pixel Accuracy |
-|-----------|----------|-------------|----------------|
-| **Barcode** | 0.799 | 0.851 | 94.2% |
-| **QR Code** | 0.853 | 0.904 | 96.1% |
-| **Mixed Content** | 0.799 | 0.851 | 94.2% |
-| **🎯 Overall** | **0.799** | **0.850** | **94.8%** |
-
+| Code Type | Mean IoU | Boundary F1 | 
+|-----------|----------|-------------| 
+| **Barcode** | 0.799 | 0.851 | 
+| **QR Code** | 0.800 | 0.845| 
+| **Mixed Content** | 0.799 | 0.851 | 
+| **🎯 Overall** | **0.799** | **0.850** | 
 </div>
 
 ---
@@ -452,7 +451,7 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 
 *Figure 6: QR code detection on rotated orientation, showcasing specialized finder pattern recognition system.*
 </div>
----
+
 <div align="left">
 **🔍 Distance & Scale Tolerance**
 </div>
@@ -463,7 +462,7 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 
 *Figure 7: QR code detection on small, distant triangular sign, demonstrating multi-scale processing effectiveness.*
 </div>
----
+
 <div align="left">
 **✨ Glare & Angle Resistance**  
 </div>
@@ -474,7 +473,7 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 
 *Figure 8: QR code detection despite reflective glare and angled orientation, highlighting preprocessing robustness.*
 </div>
----
+
 <div align="left">
 **🔢 Multiple QR Detection**
 </div>
