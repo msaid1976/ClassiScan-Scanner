@@ -386,35 +386,36 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 <div align="center">
 
 **🔍 Cylindrical Surface Detection**
-<img src="media/image1.png" alt="EAN13 detection on cylindrical container surface with bright lighting" width="600">
+<br/>
+<img src="media/01.png" alt="EAN13 detection on cylindrical container surface with bright lighting" width="600">
 
 *Figure 1: EAN13 detection on cylindrical container surface with bright lighting, demonstrating curved surface handling and illumination tolerance.*
 
 ---
 
 **🔄 Orientation Independence** 
-<img src="media/image2.png" alt="EAN13 barcode detection on flipped and angled surface" width="600">
+<img src="media/02.png" alt="EAN13 barcode detection on flipped and angled surface" width="600">
 
 *Figure 2: EAN13 barcode detection on flipped and angled surface, showcasing rotation correction and perspective handling.*
 
 ---
 
 **✨ Glare Resistance**
-<img src="media/image3.png" alt="EAN13 barcode detection despite bright lighting reflection" width="600">
+<img src="media/03.png" alt="EAN13 barcode detection despite bright lighting reflection" width="600">
 
 *Figure 3: EAN13 barcode detection despite bright lighting reflection, highlighting advanced preprocessing and glare correction.*
 
 ---
 
 **🔲 Occlusion Handling**
-<img src="media/image4.png" alt="EAN13 barcode detection despite partial blocking and red colour overlay" width="600">
+<img src="media/04.png" alt="EAN13 barcode detection despite partial blocking and red colour overlay" width="600">
 
 *Figure 4: EAN13 barcode detection despite partial blocking and red color overlay, demonstrating robustness to interference.*
 
 ---
 
 **🔃 Vertical Inversion**
-<img src="media/image5.png" alt="CODABAR barcode detection overcomes vertical inversion" width="600">
+<img src="media/05.png" alt="CODABAR barcode detection overcomes vertical inversion" width="600">
 
 *Figure 5: CODABAR barcode detection overcomes vertical inversion, showing multi-orientation processing capabilities.*
 
@@ -425,28 +426,28 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 <div align="center">
 
 **🔄 Rotation Handling**
-<img src="media/image6.png" alt="QR code detection on rotated code orientation" width="600">
+<img src="media/06.png" alt="QR code detection on rotated code orientation" width="600">
 
 *Figure 6: QR code detection on rotated orientation, showcasing specialized finder pattern recognition system.*
 
 ---
 
 **🔍 Distance & Scale Tolerance**
-<img src="media/image7.png" alt="QR code detection overcomes small size on distant triangular sign" width="600">
+<img src="media/07.png" alt="QR code detection overcomes small size on distant triangular sign" width="600">
 
 *Figure 7: QR code detection on small, distant triangular sign, demonstrating multi-scale processing effectiveness.*
 
 ---
 
 **✨ Glare & Angle Resistance**  
-<img src="media/image8.png" alt="QR code detection successful despite reflective glare and angled orientation" width="600">
+<img src="media/08.png" alt="QR code detection successful despite reflective glare and angled orientation" width="600">
 
 *Figure 8: QR code detection despite reflective glare and angled orientation, highlighting preprocessing robustness.*
 
 ---
 
 **🔢 Multiple QR Detection**
-<img src="media/image9.png" alt="Simultaneous detection of multiple QR codes in single image frame" width="700">
+<img src="media/09.png" alt="Simultaneous detection of multiple QR codes in single image frame" width="700">
 
 *Figure 9: Simultaneous detection of multiple QR codes in single frame, demonstrating multi-code processing capabilities.*
 
@@ -457,21 +458,21 @@ python ClassiScan.py --folders BarCode --fill --max_images 50
 <div align="center">
 
 **🔀 Dual-Type Recognition**
-<img src="media/image10.png" alt="CODABAR barcode and QR code detected together in mixed-code image" width="600">
+<img src="media/10.png" alt="CODABAR barcode and QR code detected together in mixed-code image" width="600">
 
 *Figure 10: CODABAR barcode and QR code detected together, showcasing dual-type recognition capability.*
 
 ---
 
 **🎯 Triple Code Detection**
-<img src="media/image11.png" alt="Multi-code detection - 2 EAN13 barcodes and 1 QR code identified together" width="700">
+<img src="media/11.png" alt="Multi-code detection - 2 EAN13 barcodes and 1 QR code identified together" width="700">
 
 *Figure 11: Multi-code detection - 2 EAN13 barcodes and 1 QR code identified simultaneously, demonstrating advanced processing.*
 
 ---
 
 **🚀 Quad Code Achievement**
-<img src="media/image12.png" alt="Quad code detection successful - 2 barcodes and 2 QR codes recognized simultaneously" width="700">
+<img src="media/12.png" alt="Quad code detection successful - 2 barcodes and 2 QR codes recognized simultaneously" width="700">
 
 *Figure 12: Quad code detection success - 2 barcodes and 2 QR codes recognized simultaneously, highlighting comprehensive architecture.*
 
